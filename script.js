@@ -179,13 +179,13 @@ document.addEventListener('DOMContentLoaded', () => {
         launchFlowerShower();
     });
 
-    // AMMA'S BLESSINGS & COMPLIMENTS GENERATOR
-    const ammaMessages = [
-        "Amma, your devotion to teaching and your family inspires us every single second. You are our role model forever!",
-        "Behind every confident step we take is your unwavering faith in us. Happy Teacher's Day to our guiding star, Amma!",
-        "You don't just teach subjects—you teach character, kindness, and courage. We are blessed to have you as our mother!",
-        "Your classroom students are lucky, but we are the luckiest of all to call you AMMA. You are the #1 teacher in the universe!",
-        "Amma, your patience is boundless, your heart is pure gold, and your smile makes every difficulty disappear.",
+    // AUNTY'S BLESSINGS & COMPLIMENTS GENERATOR
+    const auntyMessages = [
+        "Aunty, your devotion to teaching and your family inspires us every single second. You are our role model forever!",
+        "Behind every confident step we take is your unwavering faith in us. Happy Teacher's Day to our guiding star, Aunty!",
+        "You don't just teach subjects—you teach character, kindness, and courage. We are blessed to have you in our lives!",
+        "Your classroom students are lucky, but we are the luckiest of all to call you AUNTY. You are the #1 teacher in the universe!",
+        "Aunty, your patience is boundless, your heart is pure gold, and your smile makes every difficulty disappear.",
         "Thank you for teaching us that love is the greatest lesson of all. May God bless you with health, joy, and long life!"
     ];
 
@@ -193,14 +193,14 @@ document.addEventListener('DOMContentLoaded', () => {
     generateMsgBtn.addEventListener('click', () => {
         let nextIndex;
         do {
-            nextIndex = Math.floor(Math.random() * ammaMessages.length);
-        } while (nextIndex === currentMsgIndex && ammaMessages.length > 1);
+            nextIndex = Math.floor(Math.random() * auntyMessages.length);
+        } while (nextIndex === currentMsgIndex && auntyMessages.length > 1);
         
         currentMsgIndex = nextIndex;
 
         dynamicMessage.style.opacity = '0';
         setTimeout(() => {
-            dynamicMessage.textContent = ammaMessages[currentMsgIndex];
+            dynamicMessage.textContent = auntyMessages[currentMsgIndex];
             dynamicMessage.style.opacity = '1';
         }, 250);
 
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.parentElement.addEventListener('click', () => {
             lightboxModal.style.display = 'block';
             lightboxImg.src = img.src;
-            lightboxCaption.textContent = img.alt || 'Happy Teacher\'s Day Amma';
+            lightboxCaption.textContent = img.alt || 'Happy Teacher\'s Day Aunty';
         });
     });
 
