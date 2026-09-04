@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Happy Teacher's Day Amma! 🌸 To the Best Teacher & Mom</title>
+    
+    <!-- Google Fonts -->
+    <link rel=preconnect href=https://fonts.googleapis.com>
+    <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,700&family=Alex+Brush&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
+    
+    <!-- Canvas Confetti Library -->
+    <script src=https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js></script>
+    
+    <!-- Custom CSS -->
+    <link rel=stylesheet href=styles.css>
+</head>
+<body>
+
+    <!-- Floating Background Particles Canvas -->
+    <canvas id=petal-canvas></canvas>
+
+    <!-- Music Player Audio Element -->
+    <audio id=bg-music loop preload=auto>
+        <source src=assets/audio/background_music.mp3 type=audio/mp3>
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Floating Music Controller Pill -->
+    <div class=music-pill id=music-pill title=Toggle Background Music>
+        <div class=music-disc id=music-disc>
+            <i class=fa-solid fa-music></i>
+        </div>
+        <div class=music-info>
+            <span class=music-title>Special Song for Amma 🎵</span>
+            <div class=sound-wave id=sound-wave>
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <button class=music-toggle-btn id=music-toggle-btn>
+            <i class=fa-solid fa-play id=music-icon></i>
+        </button>
+    </div>
+
+    <!-- INITIAL SURPRISE ENTRY OVERLAY -->
+    <div class=surprise-entrance-overlay id=entrance-overlay>
+        <div class=gift-box-wrapper>
+            <div class=floating-sparkle sparkle-1>✨</div>
+            <div class=floating-sparkle sparkle-2>💖</div>
+            <div class=floating-sparkle sparkle-3>🌸</div>
+            <div class=floating-sparkle sparkle-4>🌟</div>
+            
+            <div class="gift-icon-container">
+                <div class="gift-glow-ring"></div>
+                <img src="assets/images/teachers_day_gift.jpg" data-asset-key="teachers_day_gift" alt="Teacher's Day Gift Surprise" class="gift-box-image-preview">
+            </div>
+
+
+            <p class=gift-subtitle>A Heartfelt Surprise For The Best Mom & Teacher</p>
+            <h1 class=gift-title>Dearest Amma 💖</h1>
+            <p class=gift-instruction>Tap the golden button below to unlock your Teacher's Day surprise 🎁</p>
+
+            <button class=open-surprise-btn id=open-surprise-btn>
+                <span>✨ OPEN YOUR SURPRISE AMMA ✨</span>
+                <i class=fa-solid fa-heart pulse-heart></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN WEB APPLICATION CONTENT (HERO & TRIBUTE) -->
+    <div class="main-wrapper" id="main-content">
+        
+        <!-- HEADER / HERO BANNER -->
+        <header class=hero-section>
+            <div class=hero-decorations>
+                <span class=garland-left>🏵️ 🌸 🌼 🌺 🏵️</span>
+                <span class=garland-right>🏵️ 🌺 🌼 🌸 🏵️</span>
+            </div>
+
+            <div class=hero-inner-container>
+                <div class=royal-tag>
+                    <i class=fa-solid fa-star></i> Honoring Our Beloved Mother & Teacher <i class=fa-solid fa-star></i>
+                </div>
+
+                <h1 class=main-hero-title>
+                    Happy Teacher's Day<br>
+                    <span class=title-amma-script>Dearest Amma</span>
+                </h1>
+
+                <p class=hero-tagline>
+                    A mother is the very first teacher of life, but having a mother who is also the 
+ most incredible teacher to this world is our greatest pride.
+                </p>
+
+                <div class=hero-action-buttons>
+                    <button class=action-btn shower-btn id=hero-flower-btn>
+                        <i class=fa-solid fa-fan></i> Shower Flowers on Amma 🌸
+                    </button>
+                    <button class=action-btn message-btn id=scroll-to-gallery-btn>
+                        <i class=fa-solid fa-images></i> View Photo Memories ✨
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- PHOTO GALLERY SECTION (3-CARD TRIBUTE FORMAT) -->
+        <section class="gallery-section" id="gallery-section">
+            <div class="section-title-wrap">
+                <div class="gold-flourish-left"></div>
+                <h2 class="section-title">The Queen of Our Hearts & Classrooms</h2>
+                <div class="gold-flourish-right"></div>
+                <p class="section-subtitle">Cherished glimpses of Amma's radiant smile, warmth, and grace</p>
+            </div>
+
+            <!-- 3-CARD SIDE-BY-SIDE GALLERY GRID -->
+            <div class="tribute-cards-grid">
+                
+                <!-- 1st Card: Left (Golden Saree) -->
+                <div class="tribute-card side-tribute-card">
+                    <div class="tribute-image-frame">
+                        <div class="tribute-image-wrapper">
+                            <img src="assets/images/mom_gold_saree.jpg" data-asset-key="mom_gold_saree" alt="Amma - Sweet Memories" class="mom-photo">
+                            <div class="photo-overlay">
+                                <span class="overlay-badge">🌸 Sweet Memories</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tribute-pill-badge side-pill">
+                        <span>🌸 Sweet Memories</span>
+                    </div>
+                </div>
+
+                <!-- 2nd Card: Center Highlight (Portrait) -->
+                <div class="tribute-card center-tribute-card">
+                    <div class="tribute-card-filigree corner-top-left"></div>
+                    <div class="tribute-card-filigree corner-top-right"></div>
+                    <div class="tribute-card-filigree corner-bottom-left"></div>
+                    <div class="tribute-card-filigree corner-bottom-right"></div>
+
+                    <div class="tribute-image-frame primary-frame">
+                        <div class="tribute-image-wrapper">
+                            <img src="assets/images/mom_center.jpg" data-asset-key="mom_center" alt="The Best Teacher Ever — My Amma" class="mom-photo" id="mom-main-img">
+                            <div class="photo-overlay">
+                                <span class="overlay-badge">👑 The Best Teacher Ever</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tribute-pill-badge center-pill">
+                        <span>💖 The Best Teacher Ever — My Amma 💖</span>
+                    </div>
+                </div>
+
+                <!-- 3rd Card: Right (Traditional Saree) -->
+                <div class="tribute-card side-tribute-card">
+                    <div class="tribute-image-frame">
+                        <div class="tribute-image-wrapper">
+                            <img src="assets/images/mom_red_saree.jpg" data-asset-key="mom_red_saree" alt="Amma - Beautiful Grace" class="mom-photo">
+                            <div class="photo-overlay">
+                                <span class="overlay-badge">✨ Beautiful Grace</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tribute-pill-badge side-pill">
+                        <span>✨ Beautiful Grace</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PLEASANT TEACHER'S DAY ART & TRIBUTE SHOWCASE -->
+        <section class="art-showcase-section">
+            <div class="section-title-wrap">
+                <div class="gold-flourish-left"></div>
+                <h2 class="section-title">Treasures of Teaching & Wisdom</h2>
+                <div class="gold-flourish-right"></div>
+                <p class="section-subtitle">A sweet celebration of Amma's noble journey as an inspiring educator</p>
+            </div>
+
+            <div class="art-showcase-grid">
+                <!-- Art Card 1: Golden Book of Knowledge -->
+                <div class="art-showcase-card">
+                    <div class="art-image-wrapper">
+                        <img src="assets/images/teachers_day_tribute.jpg" data-asset-key="teachers_day_tribute" alt="Happy Teacher's Day - Golden Book of Wisdom" class="art-illustration-img">
+                        <div class="art-badge"><i class="fa-solid fa-book-open"></i> Golden Wisdom</div>
+                    </div>
+                    <div class="art-content">
+                        <h3>The Light of Knowledge</h3>
+                        <p>
+                            Like a timeless book inscribed with love and flowers, Amma opens doors to new worlds, 
+                            sparking curiosity and confidence in every student she teaches.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Art Card 2: Tree of Knowledge -->
+                <div class="art-showcase-card">
+                    <div class="art-image-wrapper">
+                        <img src="assets/images/teachers_day_tree.jpg" data-asset-key="teachers_day_tree" alt="Tree of Knowledge & Learning" class="art-illustration-img">
+                        <div class="art-badge"><i class="fa-solid fa-seedling"></i> Nurturing Lives</div>
+                    </div>
+                    <div class="art-content">
+                        <h3>Nurturing Minds & Futures</h3>
+                        <p>
+                            Like a blooming tree that offers shade and radiant lights, Amma guides generations of learners 
+                            with unwavering patience, kindness, and moral strength.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BEAUTIFUL TEACHING QUOTATIONS SECTION -->
+        <section class=quotes-section id=quotes-section>
+            <div class=section-title-wrap>
+                <div class=gold-flourish-left></div>
+                <h2 class=section-title>Words of Love & Honor for Amma</h2>
+                <div class=gold-flourish-right></div>
+                <p class=section-subtitle>Heartfelt quotations celebrating Amma's boundless dedication as a teacher</p>
+            </div>
+
+            <div class=quotes-grid>
+                
+                <!-- Quote 1 -->
+                <div class=quote-card>
+                    <div class=quote-icon-decor><i class=fa-solid fa-quote-left></i></div>
+                    <p class=quote-body>
+                        Teaching is not just what you do from 9 to 5, Amma; it is the boundless love, 
+ patience, and wisdom you pour into every soul whose path crosses yours.
+                    </p>
+                    <div class=quote-footer>
+                        <div class=quote-author-line></div>
+                        <span class=quote-author>Forever Proud of You</span>
+                    </div>
+                </div>
+
+                <!-- Quote 2 -->
+                <div class=quote-card featured-quote>
+                    <div class=featured-badge><i class=fa-solid fa-award></i> The Ultimate Tribute</div>
+                    <div class=quote-icon-decor><i class=fa-solid fa-quote-left></i></div>
+                    <p class=quote-body>
+                        A good teacher explains, a superior teacher demonstrates, but the greatest teacher 
+ <strong>inspires forever</strong>. Amma, you don't just teach lessons from books—you teach us how to live with truth, compassion, and courage.
+                    </p>
+                    <div class=quote-footer>
+                        <div class=quote-author-line></div>
+                        <span class=quote-author>She Is The Best Teacher Ever</span>
+                    </div>
+                </div>
+
+                <!-- Quote 3 -->
+                <div class=quote-card>
+                    <div class=quote-icon-decor><i class=fa-solid fa-quote-left></i></div>
+                    <p class=quote-body>
+                        Behind all our successes, our values, and our confidence is your quiet guidance. 
+ Thank you for being our mentor, our anchor, and our most loving Amma.
+                    </p>
+                    <div class=quote-footer>
+                        <div class=quote-author-line></div>
+                        <span class=quote-author>Your Loving Family</span>
+                    </div>
+                </div>
+
+                <!-- Quote 4 -->
+                <div class=quote-card>
+                    <div class=quote-icon-decor><i class=fa-solid fa-quote-left></i></div>
+                    <p class=quote-body>
+                        To the students in your school, you are an extraordinary educator. 
+ To us at home, you are our whole world and our greatest teacher forever.
+                    </p>
+                    <div class=quote-footer>
+                        <div class=quote-author-line></div>
+                        <span class=quote-author>With Endless Respect & Gratitude</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHY AMMA IS THE BEST TEACHER BADGES -->
+        <section class=qualities-section>
+            <div class=section-title-wrap>
+                <h2 class=section-title>What Makes Amma Truly Special</h2>
+                <p class=section-subtitle>The four golden pillars of Amma's teaching and love</p>
+            </div>
+
+            <div class=qualities-grid>
+                <div class=quality-item>
+                    <div class=quality-icon-circle>
+                        <i class=fa-solid fa-chalkboard-user></i>
+                    </div>
+                    <h3>Infinite Patience</h3>
+                    <p>Always explaining with kindness and believing in every child's potential.</p>
+                </div>
+
+                <div class=quality-item>
+                    <div class=quality-icon-circle>
+                        <i class=fa-solid fa-hand-holding-heart></i>
+                    </div>
+                    <h3>Heart of Gold</h3>
+                    <p>Teaching not just from syllabus, but instilling moral values and genuine empathy.</p>
+                </div>
+
+                <div class=quality-item>
+                    <div class=quality-icon-circle>
+                        <i class=fa-solid fa-compass></i>
+                    </div>
+                    <h3>Guiding Light</h3>
+                    <p>Dispelling darkness and leading everyone towards a bright and confident future.</p>
+                </div>
+
+                <div class=quality-item>
+                    <div class=quality-icon-circle>
+                        <i class=fa-solid fa-crown></i>
+                    </div>
+                    <h3>Pure Unconditional Love</h3>
+                    <p>Balancing home and teaching with effortless dignity, warmth, and dedication.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE BLESSING & LOVE JAR -->
+        <section class=interactive-section>
+            <div class=interactive-box>
+                <div class=interactive-header>
+                    <i class=fa-solid fa-heart-circle-check></i>
+                    <h2>Amma's Special Message & Blessing Jar</h2>
+                    <p>Tap the button below to generate a sweet personalized message for Amma</p>
+                </div>
+
+                <div class=message-display-card id=message-display-card>
+                    <p class=dynamic-message-text id=dynamic-message>
+                        Amma, your devotion to teaching and your family inspires us every single second. You are our role model forever!
+                    </p>
+                </div>
+
+                <div class=interactive-controls>
+                    <button class=generator-btn id=generate-msg-btn>
+                        <i class=fa-solid fa-wand-magic-sparkles></i> Pull Another Message for Amma 💌
+                    </button>
+                    <button class=celebrate-btn id=interactive-confetti-btn>
+                        <i class=fa-solid fa-champagne-glasses></i> Celebrate Amma 🎊
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER LOVE NOTE -->
+        <footer class=royal-footer>
+            <div class=footer-garland>🌸 ✨ 🌺 ✨ 🌸</div>
+            <h2 class=footer-title>HAPPY TEACHER'S DAY, DEAREST AMMA!</h2>
+            <p class=footer-note>
+                Crafted with endless love, respect, and gratitude for the most wonderful mother and teacher in the universe. ❤️
+            </p>
+            <p class=footer-copyright>
+                Forever Your Grateful Children | Happy Teacher's Day!
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- LIGHTBOX MODAL FOR FULLSCREEN IMAGE VIEW -->
+    <div class=lightbox-modal id=lightbox-modal>
+        <span class=lightbox-close id=lightbox-close>&times;</span>
+        <img class=lightbox-content id=lightbox-img alt=Amma>
+        <div id=lightbox-caption class=lightbox-caption></div>
+    </div>
+
+    <!-- Embedded Data & Custom JavaScript -->
+    <script src="data_assets.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
